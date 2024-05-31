@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface ResourceRepository extends JpaRepository<Resource, Integer> {
 
     @Query(nativeQuery = true,value = "select name from resources where resourceId=?1")
-    Integer verificarRecursoPorId(Integer id);
+    String verificarRecursoPorId(Integer id);
 
     Resource findByName(String name);
 }
